@@ -1,10 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { LanguageProvider } from "@/components/LanguageProvider";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import WhatsAppFab from "@/components/WhatsAppFab";
-import Chatbot from "@/components/Chatbot";
+import SiteChrome from "@/components/SiteChrome";
 
 export const metadata: Metadata = {
   title: "Shree Omkar Soap Works — Wholesale Soaps & Detergents Since 1989",
@@ -25,11 +22,7 @@ export default function RootLayout({
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col bg-white">
         <LanguageProvider>
-          <Header />
-          <main className="grow">{children}</main>
-          <Footer />
-          <WhatsAppFab />
-          <Chatbot />
+          <SiteChrome>{children}</SiteChrome>
         </LanguageProvider>
       </body>
     </html>

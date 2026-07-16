@@ -16,12 +16,25 @@ function ContactForm() {
     qty: "",
     message: "",
   });
+  const [website, setWebsite] = useState(""); // honeypot — real users leave empty
+  const [sent, setSent] = useState(false);
 
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
     setForm({ ...form, [k]: e.target.value });
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
+    // Save the enquiry so it appears in the admin panel (best-effort).
+    try {
+      await fetch("/api/enquiries", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, website, source: "form" }),
+      });
+    } catch {
+      /* still fall through to WhatsApp */
+    }
+    setSent(true);
     const lines = [
       `Enquiry from website`,
       `Name: ${form.name}`,
@@ -56,10 +69,20 @@ function ContactForm() {
       </select>
       <input placeholder={t.formQty} value={form.qty} onChange={set("qty")} className={input} />
       <textarea placeholder={t.formMessage} value={form.message} onChange={set("message")} className={input} rows={3} />
+      <input
+        type="text"
+        tabIndex={-1}
+        autoComplete="off"
+        value={website}
+        onChange={(e) => setWebsite(e.target.value)}
+        className="hidden"
+        aria-hidden="true"
+      />
       <button type="submit" className="bg-blue-800 hover:bg-blue-700 text-white font-medium rounded-md px-6 py-3">
         {t.formSend}
       </button>
-      <p className="text-xs text-gray-500">{t.formNote}</p>
+      {sent && <p className="text-sm text-green-700">{t.formNote}</p>}
+      {!sent && <p className="text-xs text-gray-500">{t.formNote}</p>}
     </form>
   );
 }

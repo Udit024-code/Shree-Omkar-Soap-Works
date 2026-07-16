@@ -3,7 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import { useLang } from "./LanguageProvider";
 import { BUSINESS } from "@/lib/site";
-import { FAQS, matchFaq } from "@/lib/faqs";
+import { matchFaq } from "@/lib/faqs";
+
+type ChatFaq = { id: number; qEn: string; aEn: string; qHi: string; aHi: string };
 
 type Msg =
   | { role: "user"; text: string }
@@ -15,7 +17,16 @@ export default function Chatbot() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Msg[]>([]);
   const [input, setInput] = useState("");
+  const [faqs, setFaqs] = useState<ChatFaq[]>([]);
   const bodyRef = useRef<HTMLDivElement>(null);
+
+  // Load the current FAQ list (editable by the owner in the admin panel).
+  useEffect(() => {
+    fetch("/api/faqs")
+      .then((r) => r.json())
+      .then((d) => setFaqs(d.faqs ?? []))
+      .catch(() => setFaqs([]));
+  }, []);
 
   // Seed the greeting when the panel opens, and keep it in sync with the
   // language as long as the visitor hasn't asked anything yet.
@@ -31,7 +42,7 @@ export default function Chatbot() {
   }, [messages, open]);
 
   const answer = (question: string) => {
-    const faq = matchFaq(question, lang);
+    const faq = matchFaq(question, lang, faqs);
     if (faq) {
       setMessages((m) => [
         ...m,
@@ -48,7 +59,7 @@ export default function Chatbot() {
   };
 
   const askChip = (faqIndex: number) => {
-    const faq = FAQS[faqIndex];
+    const faq = faqs[faqIndex];
     setMessages((m) => [
       ...m,
       { role: "user", text: lang === "hi" ? faq.qHi : faq.qEn },
@@ -138,7 +149,7 @@ export default function Chatbot() {
           <div className="border-t border-gray-300 px-3 py-2 bg-white">
             <div className="text-xs text-gray-500 mb-1">{t.chatCommon}</div>
             <div className="flex gap-1.5 overflow-x-auto pb-1">
-              {FAQS.map((faq, i) => (
+              {faqs.map((faq, i) => (
                 <button
                   key={i}
                   onClick={() => askChip(i)}

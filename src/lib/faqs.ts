@@ -97,16 +97,23 @@ export function isFallbackTopic(query: string): boolean {
   return FALLBACK_KEYWORDS.some((k) => q.includes(k));
 }
 
+type Matchable = { qEn: string; aEn: string; qHi: string; aHi: string };
+
 // Returns the best-matching FAQ for a typed query, or null if nothing is a
 // confident match. Matches on shared significant words in the given language.
-export function matchFaq(query: string, lang: "en" | "hi"): Faq | null {
+// Works on any FAQ list (code seed or live database rows).
+export function matchFaq<T extends Matchable>(
+  query: string,
+  lang: "en" | "hi",
+  faqs: readonly T[]
+): T | null {
   if (isFallbackTopic(query)) return null;
   const qWords = new Set(tokenize(query));
   if (qWords.size === 0) return null;
 
-  let best: Faq | null = null;
+  let best: T | null = null;
   let bestScore = 0;
-  for (const faq of FAQS) {
+  for (const faq of faqs) {
     const text = lang === "hi" ? `${faq.qHi} ${faq.aHi}` : `${faq.qEn} ${faq.aEn}`;
     const fWords = tokenize(text);
     let overlap = 0;

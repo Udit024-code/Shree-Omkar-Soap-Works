@@ -12,12 +12,6 @@ export const FAQS: Faq[] = [
     aHi: "हाँ, आप एक ही ऑर्डर में हमारे साबुन, डिटर्जेन्ट पाउडर और केक किसी भी संयोजन में मँगा सकते हैं।",
   },
   {
-    qEn: "Do you provide samples before a bulk order?",
-    aEn: "No, we do not provide samples. You can start with a small first order to check the quality.",
-    qHi: "क्या थोक ऑर्डर से पहले सैंपल मिलता है?",
-    aHi: "नहीं, हम सैंपल नहीं देते। गुणवत्ता जाँचने के लिए आप छोटे ऑर्डर से शुरुआत कर सकते हैं।",
-  },
-  {
     qEn: "How do I get a price quote?",
     aEn: "Call or WhatsApp us, or send the enquiry form on the Contact page — we will share the latest wholesale rates.",
     qHi: "भाव/कोटेशन कैसे मिलेगा?",
@@ -49,9 +43,9 @@ export const FAQS: Faq[] = [
   },
   {
     qEn: "Are your products good for machine wash?",
-    aEn: "Yes, our products work well in washing machines — especially Dulara Gold, which is made for machine wash.",
+    aEn: "Yes — Dulara Gold is made for machine wash and works great in washing machines.",
     qHi: "क्या आपके उत्पाद मशीन वॉश के लिए अच्छे हैं?",
-    aHi: "हाँ, हमारे उत्पाद वॉशिंग मशीन में अच्छा काम करते हैं — खासकर दुलारा गोल्ड, जो मशीन वॉश के लिए ही बना है।",
+    aHi: "हाँ — दुलारा गोल्ड मशीन वॉश के लिए ही बना है और वॉशिंग मशीन में बढ़िया काम करता है।",
   },
 ];
 

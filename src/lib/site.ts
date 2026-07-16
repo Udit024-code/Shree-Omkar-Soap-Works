@@ -137,7 +137,7 @@ export const T = {
     chatPlaceholder: "Type your question…",
     chatSend: "Send",
     chatFallback:
-      "Sorry, I don't have an answer for that. Please contact us directly and we'll help you:",
+      "For this, please contact us directly — we'll be happy to help:",
     chatFallbackWhatsapp: "Ask this on WhatsApp",
     chatBackToQuestions: "See common questions",
     chatYou: "You",
@@ -185,7 +185,7 @@ export const T = {
     chatPlaceholder: "अपना सवाल लिखें…",
     chatSend: "भेजें",
     chatFallback:
-      "माफ़ कीजिए, इसका जवाब मेरे पास नहीं है। कृपया हमसे सीधे संपर्क करें, हम आपकी मदद करेंगे:",
+      "इसके लिए कृपया हमसे सीधे संपर्क करें — हमें आपकी मदद करके खुशी होगी:",
     chatFallbackWhatsapp: "यह व्हाट्सऐप पर पूछें",
     chatBackToQuestions: "आम सवाल देखें",
     chatYou: "आप",

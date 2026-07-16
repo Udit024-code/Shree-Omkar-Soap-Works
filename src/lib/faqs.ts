@@ -68,3 +68,60 @@ export const FALLBACK_TOPICS = [
   "custom or private-label manufacturing",
   "pack sizes",
 ];
+
+// Keywords (English + Hindi) that indicate a fallback topic. If a typed
+// question hits one of these, the chatbot goes straight to the contact
+// fallback instead of guessing an answer.
+const FALLBACK_KEYWORDS = [
+  "moq", "minimum", "कम से कम", "न्यूनतम",
+  "payment", "pay", "credit", "advance", "भुगतान", "पेमेंट", "उधार", "एडवांस",
+  "discount", "छूट", "डिस्काउंट",
+  "how long", "how many days", "delivery time", "कितने दिन", "कितना समय",
+  "distributor", "dealer", "dealership", "agency", "डिस्ट्रीब्यूटर", "डीलर", "एजेंसी",
+  "gst", "invoice", "bill", "जीएसटी", "बिल", "इनवॉइस",
+  "private label", "custom", "own brand", "प्राइवेट लेबल", "कस्टम", "अपना ब्रांड",
+  "pack size", "kg", "gram", "grams", "साइज", "किलो", "ग्राम", "वजन",
+];
+
+const STOP = new Set([
+  "the", "a", "an", "is", "are", "do", "does", "you", "your", "i", "my", "me",
+  "to", "for", "of", "in", "on", "and", "or", "can", "how", "what", "which",
+  "with", "we", "us", "have", "any", "क्या", "है", "हैं", "मैं", "आप", "और",
+  "के", "का", "की", "को", "में", "से", "पर", "हम", "कैसे", "कौन", "मुझे",
+]);
+
+function tokenize(s: string): string[] {
+  return s
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}\s]/gu, " ")
+    .split(/\s+/)
+    .filter((w) => w.length > 1 && !STOP.has(w));
+}
+
+export function isFallbackTopic(query: string): boolean {
+  const q = query.toLowerCase();
+  return FALLBACK_KEYWORDS.some((k) => q.includes(k));
+}
+
+// Returns the best-matching FAQ for a typed query, or null if nothing is a
+// confident match. Matches on shared significant words in the given language.
+export function matchFaq(query: string, lang: "en" | "hi"): Faq | null {
+  if (isFallbackTopic(query)) return null;
+  const qWords = new Set(tokenize(query));
+  if (qWords.size === 0) return null;
+
+  let best: Faq | null = null;
+  let bestScore = 0;
+  for (const faq of FAQS) {
+    const text = lang === "hi" ? `${faq.qHi} ${faq.aHi}` : `${faq.qEn} ${faq.aEn}`;
+    const fWords = tokenize(text);
+    let overlap = 0;
+    for (const w of new Set(fWords)) if (qWords.has(w)) overlap++;
+    const score = overlap / qWords.size;
+    if (score > bestScore) {
+      bestScore = score;
+      best = faq;
+    }
+  }
+  return bestScore >= 0.34 ? best : null;
+}

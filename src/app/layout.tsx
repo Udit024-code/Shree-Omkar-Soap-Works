@@ -4,6 +4,7 @@ import { LanguageProvider } from "@/components/LanguageProvider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFab from "@/components/WhatsAppFab";
+import Chatbot from "@/components/Chatbot";
 
 export const metadata: Metadata = {
   title: "Shree Omkar Soap Works — Wholesale Soaps & Detergents Since 1989",
@@ -28,6 +29,7 @@ export default function RootLayout({
           <main className="grow">{children}</main>
           <Footer />
           <WhatsAppFab />
+          <Chatbot />
         </LanguageProvider>
       </body>
     </html>

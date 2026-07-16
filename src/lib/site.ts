@@ -130,6 +130,17 @@ export const T = {
     formNote: "Your enquiry opens in WhatsApp — just press send.",
     footerRights: "All rights reserved.",
     wholesaleOnly: "Wholesale / bulk enquiries welcome",
+    chatTitle: "Chat with us",
+    chatOpen: "Chat with us",
+    chatGreeting: "Namaste! How can we help? Pick a question below, or type your own.",
+    chatCommon: "Common questions",
+    chatPlaceholder: "Type your question…",
+    chatSend: "Send",
+    chatFallback:
+      "Sorry, I don't have an answer for that. Please contact us directly and we'll help you:",
+    chatFallbackWhatsapp: "Ask this on WhatsApp",
+    chatBackToQuestions: "See common questions",
+    chatYou: "You",
   },
   hi: {
     home: "होम",
@@ -167,6 +178,17 @@ export const T = {
     formNote: "आपकी पूछताछ व्हाट्सऐप में खुलेगी — बस भेजें दबाएँ।",
     footerRights: "सर्वाधिकार सुरक्षित।",
     wholesaleOnly: "थोक पूछताछ का स्वागत है",
+    chatTitle: "हमसे चैट करें",
+    chatOpen: "हमसे चैट करें",
+    chatGreeting: "नमस्ते! हम कैसे मदद कर सकते हैं? नीचे से सवाल चुनें, या खुद लिखें।",
+    chatCommon: "आम सवाल",
+    chatPlaceholder: "अपना सवाल लिखें…",
+    chatSend: "भेजें",
+    chatFallback:
+      "माफ़ कीजिए, इसका जवाब मेरे पास नहीं है। कृपया हमसे सीधे संपर्क करें, हम आपकी मदद करेंगे:",
+    chatFallbackWhatsapp: "यह व्हाट्सऐप पर पूछें",
+    chatBackToQuestions: "आम सवाल देखें",
+    chatYou: "आप",
   },
 };
 

@@ -109,7 +109,7 @@ export const T = {
     viewAll: "View all products",
     aboutTitle: "Our Story",
     aboutBody:
-      "Shree Omkar Soap Works proudly carries forward the legacy of the Shambhu brand, founded by Shree Gauri Shankar in 1989 in Chandausi, Sambhal (Uttar Pradesh). His vision was simple yet ambitious — to make Shambhu a name every household could rely on. Carrying that vision forward, we not only made Shambhu a trusted brand and the people's choice across the region, but also launched two more brands — Rajdulara and Dulara. Today our quality products reach wholesale buyers in most districts of Uttar Pradesh, and we are continuously putting in the effort to take this legacy higher and higher.",
+      "Shree Omkar Soap Works proudly carries forward the legacy of the Shambhu brand, founded by Shree Gauri Shankar in 1989 in Chandausi, Sambhal (Uttar Pradesh). His vision was simple yet ambitious, to make Shambhu a name every household could rely on. Carrying that vision forward, we not only made Shambhu a trusted brand and the people's choice across the region, but also launched two more brands — Rajdulara and Dulara. Today our quality products reach wholesale buyers in most districts of Uttar Pradesh, and we are continuously putting in the effort to take this legacy higher and higher.",
     aboutQuality: "Quality commitment",
     aboutQualityBody:
       "Every batch is made with consistent formulation and checked before dispatch. We believe long-term wholesale relationships are built on quality that retailers can rely on, pack after pack.",

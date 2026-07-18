@@ -109,7 +109,7 @@ export const T = {
     viewAll: "View all products",
     aboutTitle: "Our Story",
     aboutBody:
-      "Shree Omkar Soap Works has been manufacturing quality soaps and detergents since 1989. Based in Chandausi, Sambhal (Uttar Pradesh), we supply wholesale buyers across most districts of the state. Three decades of consistent quality have made our brands — Shambhu, Dulara and Rajdulara — trusted names for retailers and distributors.",
+      "Shree Omkar Soap Works proudly carries forward the legacy of the Shambhu brand, founded by Shree Gauri Shankar in 1989 in Chandausi, Sambhal (Uttar Pradesh). His vision was simple yet ambitious — to make Shambhu a name every household could rely on. Carrying that vision forward, we not only made Shambhu a trusted brand and the people's choice across the region, but also launched two more brands — Rajdulara and Dulara. Today our quality products reach wholesale buyers in most districts of Uttar Pradesh, and we are continuously putting in the effort to take this legacy higher and higher.",
     aboutQuality: "Quality commitment",
     aboutQualityBody:
       "Every batch is made with consistent formulation and checked before dispatch. We believe long-term wholesale relationships are built on quality that retailers can rely on, pack after pack.",
@@ -157,7 +157,7 @@ export const T = {
     viewAll: "सभी उत्पाद देखें",
     aboutTitle: "हमारी कहानी",
     aboutBody:
-      "श्री ओमकार सोप वर्क्स 1989 से गुणवत्तापूर्ण साबुन और डिटर्जेन्ट बना रहा है। चंदौसी, संभल (उत्तर प्रदेश) में स्थित, हम राज्य के अधिकांश जिलों में थोक खरीदारों को आपूर्ति करते हैं। तीन दशकों की निरंतर गुणवत्ता ने हमारे ब्रांड — शम्भू, दुलारा और राजदुलारा — को खुदरा विक्रेताओं और वितरकों के लिए भरोसेमंद नाम बना दिया है।",
+      "श्री ओमकार सोप वर्क्स, श्री गौरीशंकर जी द्वारा 1989 में चंदौसी, संभल (उत्तर प्रदेश) में स्थापित शम्भू ब्रांड की विरासत को गर्व से आगे बढ़ा रहा है। उनका सपना सीधा मगर बड़ा था — शम्भू को हर घर का भरोसेमंद नाम बनाना। उनके इसी सपने को आगे बढ़ाते हुए हमने न सिर्फ शम्भू को एक भरोसेमंद ब्रांड और लोगों की पसंद बनाया, बल्कि दो और ब्रांड — राजदुलारा और दुलारा — भी उतारे। आज हमारे गुणवत्तापूर्ण उत्पाद उत्तर प्रदेश के अधिकांश जिलों में थोक खरीदारों तक पहुँचते हैं, और हम इस विरासत को और ऊँचाइयों तक ले जाने के लिए निरंतर मेहनत कर रहे हैं।",
     aboutQuality: "गुणवत्ता का वादा",
     aboutQualityBody:
       "हर बैच एक समान फॉर्मूले से बनता है और भेजने से पहले जाँचा जाता है। हमारा मानना है कि थोक व्यापार का रिश्ता उसी गुणवत्ता पर टिकता है जिस पर दुकानदार हर पैक के साथ भरोसा कर सकें।",
